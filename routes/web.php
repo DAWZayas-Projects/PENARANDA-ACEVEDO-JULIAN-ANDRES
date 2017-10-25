@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Static Routes
+Route::get('/about', function () {
+  return view('about');
+});
+Route::get('/contact' function() {
+  return view('contact');
+});
+Route::get('/advertisment', function() {
+  return view('advertisment');
+});
