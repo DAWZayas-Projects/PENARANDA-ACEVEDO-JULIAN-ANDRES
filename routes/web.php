@@ -1,9 +1,4 @@
 <?php
-
-Route::get('/', function () {
-
-   $questions = DB::table('questions')->get();
-
-   return view('welcome', compact('questions'));
-
-});
+use App\Question;
+Route::get('/questions', 'QuestionsController@index');
+Route::get('/questions/{id}', 'QuestionsController@showQuestion');
