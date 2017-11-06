@@ -12,9 +12,8 @@ class QuestionsController extends Controller
       return view('questions.index', compact('questions'));
    }
 
-   public function showQuestion($id)
+   public function showQuestion(Question $question)
    {
-      $question = Question::find($id);
       return view('questions.show', compact('question'));
    }
 }
