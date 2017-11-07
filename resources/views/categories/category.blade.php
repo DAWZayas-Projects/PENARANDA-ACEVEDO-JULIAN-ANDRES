@@ -12,8 +12,10 @@
           </h4>
           <h6 class="card-subtitle mb-2 text-muted">{{ $category->name }}</h6>
           <p class="card-text">{{ $category->description }}</p>
-          <a href="#" class="card-link">Explora</a>
-          <a href="#" class="card-link">Nueva pregunta</a>
+        </div>
+        <div class="card-footer">
+           <a href="#" class="card-link">Empezar</a>
+           <a href="#" class="card-link">Nueva pregunta</a>
         </div>
       </div>
    </div>
