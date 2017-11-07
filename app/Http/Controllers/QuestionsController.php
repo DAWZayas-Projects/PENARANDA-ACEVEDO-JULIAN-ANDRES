@@ -8,7 +8,7 @@ class QuestionsController extends Controller
 {
    public function index()
    {
-      $questions = Question::All();
+      $questions = Question::where('state', 'accepted');
       return view('questions.index', compact('questions'));
    }
 
