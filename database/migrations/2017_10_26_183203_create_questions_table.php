@@ -14,10 +14,11 @@ class CreateQuestionsTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
-           $table->engine = 'InnoDB';
             $table->increments('id')->unique();
-            $table->string('state')->default('pending');
-            $table->string('text', 140);
+            $table->enum('state', ['PENDING', 'APPROVED'])->default('PENDING');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->text('text');
             $table->timestamps();
         });
     }

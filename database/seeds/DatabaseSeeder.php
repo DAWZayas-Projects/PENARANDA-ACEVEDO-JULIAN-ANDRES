@@ -11,6 +11,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $approved = \App\Category::create(['name' => 'Prueba']);
+        \App\Category::create(['name' => 'Mas Prueba']);
+
+        $approved->questions()->createMany([
+            ['text' => 'Primera', 'state' => 'APPROVED'],
+            ['text' => 'Segunda', 'state' => 'APPROVED'],
+            ['text' => 'Tercera', 'state' => 'APPROVED'],
+            ['text' => 'Cuarta', 'state' => 'PENDING'],
+        ]);
     }
 }
