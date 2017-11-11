@@ -1,4 +1,10 @@
-#categories-container {
+body {
+   background-color: #EEEEEE;
+}
+.content {
+   padding: 20px;
+   border: solid 1px #CECECE;
+   background-color: #FFF;
    margin-top: 20px;
 }
 .card {
