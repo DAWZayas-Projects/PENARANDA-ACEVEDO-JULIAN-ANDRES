@@ -3,14 +3,13 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+      return $this->hasMany(Category::class);
     }
 
     public function answers()

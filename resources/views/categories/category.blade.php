@@ -1,6 +1,6 @@
-@extends ('index')
+@extends ('layouts.master')
 
-@section('categories')
+@section('content')
    @foreach ($categories as $category)
    <div class="col-md-4">
       <div class="card">

@@ -7,7 +7,7 @@
       @include ('layouts.header')
       <div class="container" id="categories-container">
          <div class="row">
-            @yield ('categories')
+            @yield ('content')
          </div>
       </div>
       @include ('layouts.footer')

@@ -14,4 +14,10 @@ class CategoriesController extends Controller
 
         return view('categories.category', compact('categories'));
     }
+
+   public function addInNewQuestion()
+   {
+      $categories = Category::select('id', 'name')->get();
+      return view('questions.add', compact('categories'));
+   }
 }

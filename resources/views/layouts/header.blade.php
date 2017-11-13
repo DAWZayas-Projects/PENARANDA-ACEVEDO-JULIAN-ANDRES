@@ -18,10 +18,14 @@
            <a class="nav-link" href="/contact">Contáctanos</a>
          </li>
          <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Perfil
         </a>
          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="questions/add">
+               <span class="fa fa-paper-plane"></span>
+               Enviar pregunta
+            </a>
             <a class="dropdown-item" href="profile/statistics">
                <span class="fa fa-bar-chart"></span>
                Estadísticas
