@@ -9,8 +9,7 @@ class QuestionsController extends Controller
 {
    public function show()
    {
-     $questions = Question::where('state', 'accepted');
-     return view('questions.index', compact('questions'));
+     
    }
 
    public function store()
