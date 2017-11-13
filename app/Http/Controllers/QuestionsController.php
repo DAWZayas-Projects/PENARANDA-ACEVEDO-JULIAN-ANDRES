@@ -9,21 +9,29 @@ class QuestionsController extends Controller
 {
    public function show()
    {
-     
+      $question = Category::first();
+      $question->questions;
+      return view('questions.show', compact('questions'));
    }
-
-   public function store()
+   public function addCategoryInQuestion()
    {
-      $this->validate(request(), [
-         'category' => 'required',
-         'question' => 'required'
-      ]);
-      Question::create([
-         'category_id' => request('category'),
-         'text' => request('question')
-      ]);
+      $categories = Category::select('id', 'name')->get();
+      return view('questions.add', compact('categories'));
+   }
+   public function store(Category $category)
+   {
+      // Question::create([
+      //    'category_id' => request('category'),
+      //    'text' => request('question')
+      // ]);
 
-      return redirect('/');
+      $this->validate(request(), [
+         'text' => 'required|min:5',
+         'category_id' => 'required'
+      ]);
+      $category->addQuestion(request('category_id', 'text'));
+
+      return back();
    }
 
 }

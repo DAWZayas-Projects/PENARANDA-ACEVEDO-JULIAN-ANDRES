@@ -10,4 +10,9 @@ class Category extends Model
     {
         return $this->hasMany(Question::class)->approved();
     }
+
+   public function addQuestion($category_id, $text)
+   {
+      $this->questions()->create(compact('category_id', 'text'));
+   }
 }

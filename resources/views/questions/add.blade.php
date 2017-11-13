@@ -6,13 +6,13 @@
       <form method="POST" action="/questions">
          {{ csrf_field() }}
          <div class="form-group">
-          <label for="question">Pregunta</label>
-          <input type="text" class="form-control" name="question" id="question" placeholder="¿Tu pregunta es?" required>
+          <label for="text">Pregunta</label>
+          <input type="text" class="form-control" name="text" id="question" placeholder="¿Tu pregunta es?" required>
          </div>
 
          <div class="form-group">
-            <label for="category">Categoría</label>
-            <select class="form-control" name="category" id="category" required>
+            <label for="category_id">Categoría</label>
+            <select class="form-control" name="category_id" id="category" required>
                <option value="">-- Selecciona una --</option>
                @foreach ($categories as $category)
                   <option value="{{ $category->id }}">{{ $category->name }}</option>

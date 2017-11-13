@@ -6,7 +6,7 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">
-             <a href="categories/category/{{ $category->name }}">
+             <a href="category/{{ $category->id }}">
                 {{ $category->name }}
              </a>
           </h4>
@@ -14,8 +14,7 @@
           <p class="card-text">{{ $category->description }}</p>
         </div>
         <div class="card-footer">
-           <a href="#" class="card-link">Empezar</a>
-           <a href="#" class="card-link">Nueva pregunta</a>
+           <a href="category/{{ $category->id }}" class="card-link">Empezar</a>
         </div>
       </div>
    </div>
