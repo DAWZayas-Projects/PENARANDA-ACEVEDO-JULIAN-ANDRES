@@ -12,9 +12,10 @@ class CategoriesController extends Controller
       $categories = Category::all();
       return view('categories.category', compact('categories'));
    }
-   public function show($id)
+   public function show()
    {
-      $category = Category::find($id);
-      return view('categories.show', compact('category'));
+      $categories = Category::all();
+
+      return view('categories.show', compact('categories'));
    }
 }

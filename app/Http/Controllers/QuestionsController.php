@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Question;
-use App\Category;
+use App\Models\Question;
+use App\Models\Category;
 
 class QuestionsController extends Controller
 {
@@ -13,25 +13,33 @@ class QuestionsController extends Controller
       $question->questions;
       return view('questions.show', compact('questions'));
    }
+
    public function addCategoryInQuestion()
    {
       $categories = Category::select('id', 'name')->get();
-      return view('questions.add', compact('categories'));
+      return view('questions.create', compact('categories'));
    }
+
+   public function create()
+   {
+       return view('questions.create');
+   }
+
    public function store(Category $category)
    {
-      // Question::create([
-      //    'category_id' => request('category'),
-      //    'text' => request('question')
-      // ]);
+       $this->validate(request(), [
+          'text' => 'required',
+          'category' => 'required',
+       ]);
 
-      $this->validate(request(), [
-         'text' => 'required|min:5',
-         'category_id' => 'required'
+       Question::create([
+          'text' => request('text'),
+          'category_id' => request('category_id'),
       ]);
-      $category->addQuestion(request('category_id', 'text'));
 
-      return back();
+      $question->save();
+
+      return redirect('/');
    }
 
 }
