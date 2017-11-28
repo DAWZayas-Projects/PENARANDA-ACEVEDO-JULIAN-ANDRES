@@ -3,6 +3,10 @@
 @section('content')
 <div class="container content">
    <div class="col-md-12">
+      <h1>Enviar una pregunta</h1>
+
+      <hr>
+
       <form method="POST" action="/questions">
          {{ csrf_field() }}
          <div class="form-group">
@@ -12,12 +16,7 @@
 
          <div class="form-group">
             <label for="category_id">Categoría</label>
-            <select class="form-control" name="category_id" id="category" required>
-               <option value="">-- Selecciona una --</option>
-               @foreach ($categories as $category)
-                  <option value="{{ $category->id }}">{{ $category->name }}</option>
-               @endforeach
-          </select>
+            @yield('categories.show')
          </div>
 
          <button type="submit" class="btn btn-primary">Enviar</button>
